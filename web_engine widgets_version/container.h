@@ -59,6 +59,13 @@ public:
         });
     }
 
+    virtual ~MainWindow()
+    {
+        // delete the unique_ptr member variables
+        content.reset();
+        layout.reset();
+        window.reset();
+    }
 private:
 
     std::unique_ptr<QWebEngineView> content;
